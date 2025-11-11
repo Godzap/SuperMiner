@@ -101,3 +101,37 @@
 		}
 	}
 }
+
+/* ====== Overrides and extras for News layout/icons ====== */
+.news-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+}
+
+/* Keep the title icon tidy when stacked */
+.news-title img {
+    margin: 0 0 8px 0;
+}
+
+/* Pixel-art style icons for each news item */
+.news-item-title img,
+.news-item-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border-radius: 4px;
+    border: 2px solid #000;
+    background: #fff;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+@media screen and (min-width: 1000px) {
+    .news-title {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
