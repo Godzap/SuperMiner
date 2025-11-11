@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Super Mine — Homepage (Estático)</title>
+  <style>
+    :root{--bg:#0e0f13;--panel:#151821;--panel-2:#10131a;--text:#e9eef5;--muted:#a9b2c3;--primary:#00c853;--accent:#00bcd4;--brand:#4f8cff;--card:#1b1f2a;--border:#242936;--chip:#222739}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font:500 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;color:var(--text);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1160px;margin:0 auto;padding:0 16px}
+    /* Nav */
+    .nav{position:sticky;top:0;z-index:10;backdrop-filter:saturate(140%) blur(8px);background:linear-gradient(180deg, rgba(10,12,16,.85), rgba(10,12,16,.65));border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .nav-logo{display:flex;align-items:center;gap:12px}
+    .nav-logo .mark{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 220deg at 50% 50%, #00bcd4, #00c853, #4f8cff, #00bcd4);box-shadow:0 0 0 1px rgba(255,255,255,.06) inset}
+    .nav-logo h1{font-size:20px;margin:0}
+    .nav-list{display:flex;gap:18px;flex-wrap:wrap}
+    .nav-list a{padding:8px 10px;border-radius:8px;color:var(--muted)}
+    .nav-list a:hover{color:var(--text);background:var(--chip)}
+    .nav-cta{display:flex;gap:10px}
+    .btn{padding:8px 12px;border-radius:10px;font-weight:600;border:1px solid var(--border);background:var(--chip);color:var(--text)}
+    .btn--accent{background:linear-gradient(180deg,#00c853,#00b248);border-color:#007f35}
+    /* Header */
+    .header{background:radial-gradient(1200px 400px at 50% -10%, rgba(79,140,255,.18), transparent 60%),linear-gradient(180deg,#0c0f14 0%,#0b0d12 100%);border-bottom:1px solid var(--border)}
+    .hero{text-align:center;padding:64px 0 48px}
+    .hero h2{margin:0 0 10px;font-size:44px;letter-spacing:.3px}
+    .hero p{margin:0;color:var(--muted);font-size:18px}
+    /* Section title */
+    .section-title{display:flex;align-items:center;gap:12px;margin:38px 0 18px}
+    .chip{width:38px;height:38px;border-radius:10px;flex:0 0 auto;background:linear-gradient(180deg,#263042,#1d2433);border:1px solid var(--border)}
+    .section-title h3{margin:0;font-size:28px}
+    /* Cards */
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 3;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:12px;min-height:100%}
+    .media{height:140px;border-radius:10px;background:linear-gradient(135deg,#1b2130,#222a3d);border:1px solid var(--border)}
+    .card h4{margin:0;font-size:18px}
+    .price{color:var(--muted)}
+    .card .btn{align-self:flex-start}
+    /* Play */
+    .panel{background:var(--panel-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:36px 0}
+    .play{display:grid;gap:24px;align-items:center;grid-template-columns:1.2fr 2fr 1.2fr}
+    .mock{height:160px;border-radius:14px;border:1px solid var(--border);background:linear-gradient(135deg,#1a2030,#232b3e)}
+    .play h3{margin:0 0 8px;font-size:26px}
+    .play p{margin:0 0 14px;color:var(--muted)}
+    .ip{display:inline-block;padding:8px 12px;border-radius:10px;border:1px dashed #2c3550;background:#171c29;color:#b7c3d9;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+    /* News */
+    .news-wrap{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .news{grid-column:span 4;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .news h4{margin:0 0 4px;font-size:18px}
+    .date{color:var(--muted);font-size:13px;display:block;margin-bottom:10px}
+    /* Discover */
+    .discover .tile{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px}
+    .tile .media{height:120px}
+    .tile h4{margin:10px 0 4px}
+    .tile p{margin:0;color:var(--muted);font-size:14px}
+    /* Footer */
+    .footer{border-top:1px solid var(--border);background:linear-gradient(180deg,#0b0d12,#0a0c10);padding:28px 0}
+    .foot{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px}
+    .social{display:flex;gap:12px;flex-wrap:wrap}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:var(--chip);color:var(--text);font-size:14px}
+    .note{color:var(--muted);font-size:14px}
+    /* Responsive */
+    @media (max-width:1024px){.card{grid-column:span 4}.play{grid-template-columns:1fr;text-align:center}.play .mock{display:none}}
+    @media (max-width:720px){.card{grid-column:span 6}.news{grid-column:span 12}.discover .tile{grid-column:span 12}.nav-list{gap:10px}.hero h2{font-size:34px}}
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="nav-logo">
+        <div class="mark" aria-hidden="true"></div>
+        <h1>Super Mine</h1>
+      </div>
+      <div class="nav-list" aria-label="Navegação principal">
+        <a href="#">Início</a>
+        <a href="#">Loja</a>
+        <a href="#">Regras</a>
+        <a href="https://discord.gg/VyZBQn4vgn" target="_blank" rel="noopener">Discord</a>
+        <a href="https://minecraftpocket-servers.com/" target="_blank" rel="noopener">Votar</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn" href="#">Entrar</a>
+        <a class="btn btn--accent" href="#">Carrinho</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container hero">
+      <h2>Super Mine</h2>
+      <p>O maior e melhor servidor de minigames.</p>
+    </div>
+  </header>
+
+  <!-- Produtos -->
+  <main class="container">
+    <div class="section-title">
+      <div class="chip" aria-hidden="true"></div>
+      <h3>Explore os produtos</h3>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="media" aria-hidden="true"></div>
+        <h4>VIP Bronze</h4>
+        <div class="price">USD 0.99</div>
+        <a class="btn" href="#">Ver mais</a>
+      </article>
+      <article class="card">
+        <div class="media" aria-hidden="true"></div>
+        <h4>VIP Prata</h4>
+        <div class="price">USD 5.99</div>
+        <a class="btn" href="#">Ver mais</a>
+      </article>
+      <article class="card">
+        <div class="media" aria-hidden="true"></div>
+        <h4>VIP Ouro</h4>
+        <div class="price">USD 9.99</div>
+        <a class="btn" href="#">Ver mais</a>
+      </article>
+      <article class="card">
+        <div class="media" aria-hidden="true"></div>
+        <h4>Cosméticos</h4>
+        <div class="price">A partir de USD 2.99</div>
+        <a class="btn" href="#">Ver mais</a>
+      </article>
+    </div>
+  </main>
+
+  <!-- Play -->
+  <section class="panel">
+    <div class="container play">
+      <div class="mock" aria-hidden="true"></div>
+      <div>
+        <h3>Jogue agora</h3>
+        <p>Use o IP abaixo para acessar o servidor com Minecraft pirata e/ou original a qualquer momento.</p>
+        <div class="ip">play.supermine.net</div>
+      </div>
+      <div class="mock" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Notícias -->
+  <section class="container">
+    <div class="section-title">
+      <div class="chip" aria-hidden="true"></div>
+      <h3>Notícias</h3>
+    </div>
+    <div class="news-wrap">
+      <article class="news">
+        <h4>Novo Skywars!!</h4>
+        <span class="date">• 4 de abril de 2023</span>
+        <p>O minigame mais aguardado por todos finalmente chegou! Skywars já está disponível para jogar. Fizemos um “Skywars Inovador”, com os melhores kits e experiências personalizadas para vocês.</p>
+      </article>
+      <article class="news">
+        <h4>Novo Anticheat!!</h4>
+        <span class="date">• 20 de março de 2023</span>
+        <p>Melhoramos sua experiência no servidor em até 10x! Lançamos um novo anti‑cheat que detecta com facilidade hackers, dos mais simples aos mais avançados.</p>
+      </article>
+      <article class="news">
+        <h4>Sistema de Almas!!</h4>
+        <span class="date">• 2 de fevereiro de 2023</span>
+        <p>O tão aguardado sistema de almas chegou aos modos PvP. Conquiste itens no <b>SoulWell</b> após obter 10 almas e desbloqueie recompensas poderosas.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Descubra mais -->
+  <section class="container discover" style="margin:12px auto 44px;">
+    <div class="section-title">
+      <div class="chip" aria-hidden="true"></div>
+      <h3>Descubra mais</h3>
+    </div>
+    <div class="grid">
+      <div class="tile" style="grid-column:span 4;">
+        <div class="media" aria-hidden="true"></div>
+        <h4>Lobbies</h4>
+        <p>Temos lobbies lindos e fáceis de encontrar para você teleportar para o seu jogo favorito.</p>
+      </div>
+      <div class="tile" style="grid-column:span 4;">
+        <div class="media" aria-hidden="true"></div>
+        <h4>Mapas</h4>
+        <p>Mapas feitos para jogos rápidos, com baús bem localizados e rotas inteligentes.</p>
+      </div>
+      <div class="tile" style="grid-column:span 4;">
+        <div class="media" aria-hidden="true"></div>
+        <h4>Kits</h4>
+        <p>Os melhores kits, bem produzidos e disponíveis para compra com almas e moedas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container foot">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <strong>Super Mine</strong>
+      </div>
+      <div class="note">© 2023 Super Mine · Todos os direitos reservados.</div>
+      <div class="social">
+        <a class="pill" href="https://discord.gg/VyZBQn4vgn" target="_blank" rel="noopener">Discord</a>
+        <a class="pill" href="https://twitter.com/super_mine65102" target="_blank" rel="noopener">Twitter/X</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
