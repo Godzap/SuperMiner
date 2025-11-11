@@ -1,4 +1,4 @@
-// ===================
+﻿// ===================
 //    LOGIN SYSTEM
 // ===================
 
@@ -24,7 +24,7 @@ form.addEventListener("submit", function (event) {
 	if(nick.length < 3 || nick.length > 16) {
 	   form.reset();
 	   nickInput.classList.add("input-invalid");
-	   nickInput.setCustomValidity("Add a nickname between 3 to 16 characters");
+	   nickInput.setCustomValidity("Informe um apelido entre 3 e 16 caracteres");
 	   nickInput.reportValidity();
  
 	   setTimeout(() => {
@@ -37,7 +37,7 @@ form.addEventListener("submit", function (event) {
 	if(confirm.length < 3 || confirm.length > 16) {
 		form.reset();
 		confirmInput.classList.add("input-invalid");
-		confirmInput.setCustomValidity("Add a nickname between 3 to 16 characters");
+		confirmInput.setCustomValidity("Informe um apelido entre 3 e 16 caracteres");
 		confirmInput.reportValidity();
   
 		setTimeout(() => {
@@ -50,7 +50,7 @@ form.addEventListener("submit", function (event) {
 	if(nick !== confirm) {
 		form.reset();
 		confirmInput.classList.add("input-invalid");
-		confirmInput.setCustomValidity("The values ​​must be the same.");
+		confirmInput.setCustomValidity("The values â€‹â€‹must be the same.");
 		confirmInput.reportValidity();
   
 		setTimeout(() => {
