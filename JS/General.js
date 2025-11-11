@@ -1,4 +1,4 @@
-// ==================
+﻿// ==================
 //   NAVBAR MOBILE
 // ==================
 
@@ -19,3 +19,4 @@ const navinicial = document.querySelector('.nav-logo');
 navinicial.addEventListener('click', () => {
     window.location.href = "../HTML/Index.html";
 });
+

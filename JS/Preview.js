@@ -1,4 +1,4 @@
-// =====================
+﻿// =====================
 //        LOADING
 // =====================
 
@@ -17,3 +17,4 @@ var errorTimer = setTimeout(function() {
 	document.getElementById("loading").style.display = "none";
 	document.getElementById("error-message").style.display = "block";
 }, timeLimit);
+

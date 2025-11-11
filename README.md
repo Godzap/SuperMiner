@@ -1,18 +1,18 @@
-﻿# ðŸ† - Super Mine
+﻿# ðŸ† - Super Miner
 
-> Super Mine is a website template created by a group of friends during the High Performance Codes course in college as a project. The goal was to create a responsive website for Minecraft servers with login without backend, without the use of frameworks, with a focus on speed and code cleanliness.
+> Super Miner is a website template created by a group of friends during the High Performance Codes course in college as a project. The goal was to create a responsive website for Minecraft servers with login without backend, without the use of frameworks, with a focus on speed and code cleanliness.
 
-> This website template is public and can be used by anyone who wants to create a website for a Minecraft server. Just modify some content to adapt it to your desired format. With Super Mine, you are guaranteed to have a responsive website.
+> This website template is public and can be used by anyone who wants to create a website for a Minecraft server. Just modify some content to adapt it to your desired format. With Super Miner, you are guaranteed to have a responsive website.
 
-> In summary, if you are looking for a fast and clean responsive website template for your Minecraft server, Super Mine is an excellent choice. With an elegant and highly adaptable design, it is perfect for offering your users a high-quality experience.
+> In summary, if you are looking for a fast and clean responsive website template for your Minecraft server, Super Miner is an excellent choice. With an elegant and highly adaptable design, it is perfect for offering your users a high-quality experience.
 
 ---
 
 # ðŸ“Ÿ - Performance
 
-> Super Mine has undergone several performance tests in order to ensure that it is fast and efficient. Throughout the development process, adjustments and improvements were made to make the site cleaner and better adapted to the users' needs.
+> Super Miner has undergone several performance tests in order to ensure that it is fast and efficient. Throughout the development process, adjustments and improvements were made to make the site cleaner and better adapted to the users' needs.
 
-> View the preview now: https://godzap.github.io/SuperMine/
+> View the preview now: https://godzap.github.io/SuperMiner/
 ---
 
 # â­ - Components
@@ -46,7 +46,7 @@
 
 > To use this template, you can download it from the releases, since they are bug approved and fixed versions! After downloading, extract the zip file to a folder and modify the whole body [HTML] for what you need. If you want more advanced features and don't have the knowledge, I recommend hiring a developer to do it for you, or you can also contact me on Discord: zHenry#3137.
 
-> **https://github.com/Henry8K/SuperMine/releases/**
+> **https://github.com/Henry8K/SuperMiner/releases/**
 
 ---
 
@@ -55,4 +55,6 @@
 > The project has a preview of a login and registration system. This system was all done with JS, as mentioned before, only as a preview. It is necessary to adapt or remove it to use in your project because it was added since it was mandatory in the college project. The Checkout system **WAS NOT** added for obvious reasons.
 
 > Done with â™¥ï¸ by Henry8K and team.
+
+
 

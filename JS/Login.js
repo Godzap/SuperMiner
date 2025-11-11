@@ -71,3 +71,4 @@ form.addEventListener("submit", function (event) {
 	confirmInput.value = "";
 	window.location.href = "../HTML/Cart.html";
 });
+
